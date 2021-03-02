@@ -2,7 +2,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build",
+            "label": "buildc++",
             "type": "shell",
             "command": "g++ -std=c++17 main.cpp",
             "presentation": {
@@ -12,10 +12,10 @@
                 "panel": "shared",
                 "showReuseMessage": true,
                 "clear": false
-            },
+            }
         },
         {
-            "label": "build & run",
+            "label": "build & run c++",
             "type": "shell",
             "command": "./a.out<input>output ; rm *.out",
             "presentation": {
@@ -27,7 +27,38 @@
                 "clear": false
             },
             "dependsOn": [
-                "build"
+                "buildc++"
+            ],
+            "problemMatcher": [],
+            "group": "build"
+        },
+        {
+            "label": "buildpas",
+            "type": "shell",
+            "command": "fpc main.pas",
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            }
+        },
+        {
+            "label": "build & run pascal",
+            "type": "shell",
+            "command": "./main<input>output ; rm main main.o",
+            "presentation": {
+                "echo": true,
+                "reveal": "never",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "dependsOn": [
+                "buildpas"
             ],
             "problemMatcher": [],
             "group": {
