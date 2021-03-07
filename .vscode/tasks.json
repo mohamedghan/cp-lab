@@ -2,9 +2,9 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "buildc++",
+            "label": "run competitive programming",
             "type": "shell",
-            "command": "g++ -std=c++17 main.cpp",
+            "command": "./build-cpp.sh main",
             "presentation": {
                 "echo": true,
                 "reveal": "silent",
@@ -12,59 +12,27 @@
                 "panel": "shared",
                 "showReuseMessage": true,
                 "clear": false
-            }
-        },
-        {
-            "label": "build & run c++",
-            "type": "shell",
-            "command": "./a.out<input>output ; rm *.out",
-            "presentation": {
-                "echo": true,
-                "reveal": "never",
-                "focus": false,
-                "panel": "shared",
-                "showReuseMessage": true,
-                "clear": false
             },
-            "dependsOn": [
-                "buildc++"
-            ],
-            "problemMatcher": [],
-            "group": "build"
-        },
-        {
-            "label": "buildpas",
-            "type": "shell",
-            "command": "fpc main.pas",
-            "presentation": {
-                "echo": true,
-                "reveal": "silent",
-                "focus": false,
-                "panel": "shared",
-                "showReuseMessage": true,
-                "clear": false
-            }
-        },
-        {
-            "label": "build & run pascal",
-            "type": "shell",
-            "command": "./main<input>output ; rm main main.o",
-            "presentation": {
-                "echo": true,
-                "reveal": "never",
-                "focus": false,
-                "panel": "shared",
-                "showReuseMessage": true,
-                "clear": false
-            },
-            "dependsOn": [
-                "buildpas"
-            ],
-            "problemMatcher": [],
             "group": {
                 "kind": "build",
                 "isDefault": true
-            }
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "run Pascal",
+            "type": "shell",
+            "command": "./build-pas.sh main",
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "group": "build",
+            "problemMatcher": []
         }
     ]
 }
