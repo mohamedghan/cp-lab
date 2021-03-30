@@ -2,9 +2,9 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "run competitive programming",
+            "label": "compile & run",
             "type": "shell",
-            "command": "./build-cpp.sh main",
+            "command": "./build.sh ${fileBasenameNoExtension} ${fileExtname}",
             "presentation": {
                 "echo": true,
                 "reveal": "silent",
@@ -19,20 +19,5 @@
             },
             "problemMatcher": []
         },
-        {
-            "label": "run Pascal",
-            "type": "shell",
-            "command": "./build-pas.sh main",
-            "presentation": {
-                "echo": true,
-                "reveal": "silent",
-                "focus": false,
-                "panel": "shared",
-                "showReuseMessage": true,
-                "clear": false
-            },
-            "group": "build",
-            "problemMatcher": []
-        }
     ]
 }
